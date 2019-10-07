@@ -9,7 +9,7 @@ namespace POE_Task_1
     [Serializable]
     class FactoryBuilding : Building
     {
-        private string unitType;
+        private string unitType; // all neccesary properties
 
         public string UnitType
         {
@@ -81,7 +81,7 @@ namespace POE_Task_1
         }
 
 
-        public FactoryBuilding(int x, int y, int hp, Faction fac, string sym, int Pspeed, string uType) :
+        public FactoryBuilding(int x, int y, int hp, Faction fac, string sym, int Pspeed, string uType) : // constructor for params
             base(x, y, hp, fac, sym)
         {
             ProductionSPeed = Pspeed;

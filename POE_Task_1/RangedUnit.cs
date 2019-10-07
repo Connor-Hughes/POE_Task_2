@@ -159,7 +159,7 @@ namespace POE_Task_1
                             posY--;
                         }
                     }
-                    else if (ClosestBuilding is ResourceBuilding)
+                    else if (ClosestBuilding is ResourceBuilding) //showing the units when to attack the buildings
                     {
                         ResourceBuilding closestBuildingRB = (ResourceBuilding) ClosestBuilding;
 

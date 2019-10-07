@@ -14,7 +14,7 @@ namespace POE_Task_1
 
     class Map
     {
-        public string[,] map = new string[20, 20];
+        public string[,] map = new string[20, 20]; // the maps array
         Random Rd = new Random();
 
         public List<Building> buildings = new List<Building>();
@@ -38,12 +38,11 @@ namespace POE_Task_1
 
         public  void GenerateBattleField() // method to allow the random number of units, including the ranged and the melee units
         {
-
             for (int i = 0; i < BuildingNum; i++)
             {
                 if (Rd.Next(0, 2) == 0)
                 {
-                    ResourceBuilding DiamondMine = new ResourceBuilding(0, 0, 100, Faction.Hero, "◘", 10);
+                    ResourceBuilding DiamondMine = new ResourceBuilding(0, 0, 100, Faction.Hero, "◘", 10); //setting the symbol amd stats for the diamond mine 
                     diamondMines.Add(DiamondMine);
                 }
                 else
@@ -59,7 +58,7 @@ namespace POE_Task_1
                         UnitName = "Ranged";
                     }
 
-                    FactoryBuilding barrack = new FactoryBuilding(0, 0, 100, Faction.Hero, "┬", Rd.Next(3, 10), UnitName);
+                    FactoryBuilding barrack = new FactoryBuilding(0, 0, 100, Faction.Hero, "┬", Rd.Next(3, 10), UnitName);  //setting the symbol amd stats for the Barrack
                     barracks.Add(barrack);
                 }
             }
@@ -67,7 +66,7 @@ namespace POE_Task_1
             {
                 if (Rd.Next(0, 2) == 0)
                 {
-                    ResourceBuilding DiamondMine = new ResourceBuilding(0, 0, 100, Faction.Villain, "◘", 10);
+                    ResourceBuilding DiamondMine = new ResourceBuilding(0, 0, 100, Faction.Villain, "◘", 10);  //setting the symbol amd stats for the diamond mine 
                     diamondMines.Add(DiamondMine);
                 }
                 else
@@ -83,12 +82,12 @@ namespace POE_Task_1
                         UnitName = "Ranged";
                     }
 
-                    FactoryBuilding barrack = new FactoryBuilding(0, 0, 100, Faction.Villain, "┬", Rd.Next(3, 10), UnitName);
+                    FactoryBuilding barrack = new FactoryBuilding(0, 0, 100, Faction.Villain, "┬", Rd.Next(3, 10), UnitName);  //setting the symbol amd stats for the factory building
                     barracks.Add(barrack);
                 }
             }
 
-            foreach (ResourceBuilding u in diamondMines)
+            foreach (ResourceBuilding u in diamondMines) // populating and randomizing the spawn of the resource buildings
             {
                 for (int i = 0; i < diamondMines.Count; i++)
                 {
@@ -108,7 +107,7 @@ namespace POE_Task_1
                 buildings.Add(u);
             }
 
-            foreach (FactoryBuilding u in barracks)
+            foreach (FactoryBuilding u in barracks) // populating and randomizing the spawn of the barracks
             {
                 for (int i = 0; i < barracks.Count; i++)
                 {
